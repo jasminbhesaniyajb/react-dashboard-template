@@ -104,7 +104,6 @@ function StatusComingSoon() {
       </Helmet>
       <MainContent>
         <Container maxWidth="md">
-          <Logo />
           <Box textAlign="center" mb={3}>
             <Container maxWidth="xs">
               <Typography variant="h1" sx={{ mt: 4, mb: 2 }}>
@@ -154,24 +153,6 @@ function StatusComingSoon() {
                   We'll email you once our website is launched!
                 </FormHelperText>
               </FormControl>
-              <Divider sx={{ my: 4 }} />
-              <Box sx={{ textAlign: 'center' }}>
-                <Tooltip arrow placement="top" title="Facebook">
-                  <IconButton color="primary">
-                    <FacebookIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip arrow placement="top" title="Twitter">
-                  <IconButton color="primary">
-                    <TwitterIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip arrow placement="top" title="Instagram">
-                  <IconButton color="primary">
-                    <InstagramIcon />
-                  </IconButton>
-                </Tooltip>
-              </Box>
             </Box>
           </Container>
         </Container>
