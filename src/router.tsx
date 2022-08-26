@@ -18,11 +18,8 @@ const Loader = (Component) => (props) =>
 const Login = Loader(lazy(() => import('src/content/login')));
 
 // Applications
-const Messenger = Loader(
-  lazy(() => import('src/content/applications/Messenger'))
-);
-const Transactions = Loader(
-  lazy(() => import('src/content/applications/Transactions'))
+const UsersList = Loader(
+  lazy(() => import('src/content/applications/Users-List'))
 );
 const UserProfile = Loader(
   lazy(() => import('src/content/applications/Users/profile'))
@@ -37,12 +34,6 @@ const Status404 = Loader(
 );
 const Status500 = Loader(
   lazy(() => import('src/content/pages/Status/Status500'))
-);
-const StatusComingSoon = Loader(
-  lazy(() => import('src/content/pages/Status/ComingSoon'))
-);
-const StatusMaintenance = Loader(
-  lazy(() => import('src/content/pages/Status/Maintenance'))
 );
 
 const routes: RouteObject[] = [
@@ -69,14 +60,6 @@ const routes: RouteObject[] = [
             path: '500',
             element: <Status500 />
           },
-          {
-            path: 'maintenance',
-            element: <StatusMaintenance />
-          },
-          {
-            path: 'coming-soon',
-            element: <StatusComingSoon />
-          }
         ]
       },
       {
@@ -86,26 +69,16 @@ const routes: RouteObject[] = [
     ]
   },
   {
-    path: 'dashboards',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: 'messenger',
-        element: <Messenger />
-      }
-    ]
-  },
-  {
     path: 'management',
     element: <SidebarLayout />,
     children: [
       {
         path: '',
-        element: <Navigate to="transactions" replace />
+        element: <Navigate to="users-list" replace />
       },
       {
-        path: 'transactions',
-        element: <Transactions />
+        path: 'users-list',
+        element: <UsersList />
       },
       {
         path: 'profile',

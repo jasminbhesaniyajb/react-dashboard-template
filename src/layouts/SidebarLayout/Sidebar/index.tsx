@@ -9,14 +9,12 @@ import {
   styled,
   Divider,
   useTheme,
-  Button,
   lighten,
-  darken,
-  Tooltip
+  darken
 } from '@mui/material';
-
 import SidebarMenu from './SidebarMenu';
 import Logo from 'src/components/LogoSign';
+import { Typography } from '@mui/material';
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -56,14 +54,8 @@ function Sidebar() {
       >
         <Scrollbar>
           <Box mt={3}>
-            <Box
-              mx={2}
-              // sx={{
-              //   width: 52
-              // }}
-            >
-              {/* <Logo /> */}
-              <h3>Admin Dashboard</h3>
+            <Box mx={2} display="flex" justifyContent="center">
+              <Typography variant="h4">Admin Dashboard</Typography>
             </Box>
           </Box>
           <Divider
@@ -75,24 +67,6 @@ function Sidebar() {
           />
           <SidebarMenu />
         </Scrollbar>
-        {/* <Divider
-          sx={{
-            background: theme.colors.alpha.trueWhite[10]
-          }}
-        />
-        <Box p={2}>
-          <Button
-            href="https://bloomui.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            color="warning"
-            size="small"
-            fullWidth
-          >
-            Upgrade to PRO
-          </Button>
-        </Box> */}
       </SidebarWrapper>
       <Drawer
         sx={{
@@ -116,11 +90,9 @@ function Sidebar() {
             <Box mt={3}>
               <Box
                 mx={2}
-                sx={{
-                  width: 52
-                }}
+                display="flex" justifyContent="center"
               >
-                <Logo />
+                <Typography variant="h4">Admin Dashboard</Typography>
               </Box>
             </Box>
             <Divider

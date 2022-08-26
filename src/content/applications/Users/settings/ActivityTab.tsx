@@ -74,42 +74,6 @@ function ActivityTab() {
           • 4 mins read
         </Typography>
       </Box>
-      <Divider />
-      <CardActionsWrapper
-        sx={{
-          display: { xs: 'block', md: 'flex' },
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }}
-      >
-        <Box>
-          <Button startIcon={<ThumbUpAltTwoToneIcon />} variant="contained">
-            Like
-          </Button>
-          <Button
-            startIcon={<CommentTwoToneIcon />}
-            variant="outlined"
-            sx={{ mx: 2 }}
-          >
-            Comment
-          </Button>
-          <Button startIcon={<ShareTwoToneIcon />} variant="outlined">
-            Share
-          </Button>
-        </Box>
-        <Box sx={{ mt: { xs: 2, md: 0 } }}>
-          <Typography variant="subtitle2" component="span">
-            <Text color="black">
-              <b>485</b>
-            </Text>{' '}
-            reactions •{' '}
-            <Text color="black">
-              <b>63</b>
-            </Text>{' '}
-            comments
-          </Typography>
-        </Box>
-      </CardActionsWrapper>
     </Card>
   );
 }

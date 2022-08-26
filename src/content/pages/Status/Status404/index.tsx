@@ -3,13 +3,10 @@ import {
   Card,
   Typography,
   Container,
-  Divider,
   Button,
-  FormControl,
   OutlinedInput,
-  InputAdornment
 } from '@mui/material';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 import { styled } from '@mui/material/styles';

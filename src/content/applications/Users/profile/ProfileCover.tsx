@@ -10,8 +10,6 @@ import {
   IconButton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
-import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import UploadTwoToneIcon from '@mui/icons-material/UploadTwoTone';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
@@ -82,11 +80,6 @@ const ProfileCover = ({ user }) => {
   return (
     <>
       <Box display="flex" mb={3}>
-        <Tooltip arrow placement="top" title="Go back">
-          <IconButton color="primary" sx={{ p: 2, mr: 2 }}>
-            <ArrowBackTwoToneIcon />
-          </IconButton>
-        </Tooltip>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
             Profile for {user.name}
@@ -96,21 +89,7 @@ const ProfileCover = ({ user }) => {
           </Typography>
         </Box>
       </Box>
-      <CardCover>
-        <CardMedia image={user.coverImg} />
-        <CardCoverAction>
-          <Input accept="image/*" id="change-cover" multiple type="file" />
-          <label htmlFor="change-cover">
-            <Button
-              startIcon={<UploadTwoToneIcon />}
-              variant="contained"
-              component="span"
-            >
-              Change cover
-            </Button>
-          </label>
-        </CardCoverAction>
-      </CardCover>
+      <Box mt={10}>
       <AvatarWrapper>
         <Avatar variant="rounded" alt={user.name} src={user.avatar} />
         <ButtonUploadWrapper>
@@ -127,38 +106,20 @@ const ProfileCover = ({ user }) => {
           </label>
         </ButtonUploadWrapper>
       </AvatarWrapper>
+      </Box>
       <Box py={2} pl={2} mb={3}>
         <Typography gutterBottom variant="h4">
           {user.name}
         </Typography>
         <Typography variant="subtitle2">{user.description}</Typography>
         <Typography sx={{ py: 2 }} variant="subtitle2" color="text.primary">
-          {user.jobtitle} | {user.location} | {user.followers} followers
+          {user.jobtitle} | {user.location}
         </Typography>
         <Box
           display={{ xs: 'block', md: 'flex' }}
           alignItems="center"
           justifyContent="space-between"
         >
-          <Box>
-            <Button size="small" variant="contained">
-              Follow
-            </Button>
-            <Button size="small" sx={{ mx: 1 }} variant="outlined">
-              View website
-            </Button>
-            <IconButton color="primary" sx={{ p: 0.5 }}>
-              <MoreHorizTwoToneIcon />
-            </IconButton>
-          </Box>
-          <Button
-            sx={{ mt: { xs: 2, md: 0 } }}
-            size="small"
-            variant="text"
-            endIcon={<ArrowForwardTwoToneIcon />}
-          >
-            See all {user.followers} connections
-          </Button>
         </Box>
       </Box>
     </>
