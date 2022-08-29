@@ -1,9 +1,9 @@
 import { Card } from '@mui/material';
-import { CryptoOrder } from 'src/models/crypto_order';
+import { CryptoOrder } from 'src/types/crypto_order';
 import RecentOrdersTable from './RecentOrdersTable';
 import { subDays } from 'date-fns';
 
-function RecentOrders() {
+const RecentOrders = () => {
   const cryptoOrders: CryptoOrder[] = [
     {
       id: '1',
@@ -136,6 +136,14 @@ function RecentOrders() {
       currency: '$'
     }
   ];
+  const getUsers = async () => {
+      const payload = {};
+      try {
+        const data = await getUsers();
+      } catch (error) {
+        console.log(error);
+      }
+  };
 
   return (
     <Card>

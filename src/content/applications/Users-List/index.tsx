@@ -4,7 +4,7 @@ import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import { Grid, Container } from '@mui/material';
 import RecentOrders from './RecentOrders';
 
-function ApplicationsTransactions() {
+const ApplicationsTransactions = () => {
   return (
     <>
       <Helmet>

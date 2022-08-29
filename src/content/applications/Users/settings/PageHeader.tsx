@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-function PageHeader() {
+const PageHeader = () => {
   const user = {
     name: 'Catherine Pike',
     avatar: '/static/images/avatars/1.jpg'

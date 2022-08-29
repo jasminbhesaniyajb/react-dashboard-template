@@ -96,7 +96,7 @@ const LogoText = styled(Box)(
 `
 );
 
-function Logo() {
+const Logo = () => {
   return (
     <LogoWrapper to="/dashboard">
       <LogoSignWrapper>

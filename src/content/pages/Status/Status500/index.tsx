@@ -43,7 +43,7 @@ const TypographySecondary = styled(Typography)(
 `
 );
 
-function Status500() {
+const Status500 = () => {
   const [pending, setPending] = useState(false);
   function handleClick() {
     setPending(true);

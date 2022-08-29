@@ -35,7 +35,7 @@ const ButtonSearch = styled(Button)(
 `
 );
 
-function Status404() {
+const Status404 = () => {
   return (
     <>
       <Helmet>

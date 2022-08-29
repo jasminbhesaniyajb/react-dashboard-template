@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { Grid, Container } from '@mui/material';
 import ProfileCover from './ProfileCover';
 
-function ManagementUserProfile() {
+const ManagementUserProfile = () => {
   const user = {
     savedCards: 7,
     name: 'Catherine Pike',

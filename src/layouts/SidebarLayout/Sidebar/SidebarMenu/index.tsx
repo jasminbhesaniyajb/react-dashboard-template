@@ -156,7 +156,7 @@ const SubMenuWrapper = styled(Box)(
 `
 );
 
-function SidebarMenu() {
+const SidebarMenu = () => {
   const { closeSidebar } = useContext(SidebarContext);
 
   return (
@@ -177,7 +177,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/management/transactions"
+                  to="/management/users-list"
                   startIcon={<TableChartTwoToneIcon />}
                 >
                   Users List

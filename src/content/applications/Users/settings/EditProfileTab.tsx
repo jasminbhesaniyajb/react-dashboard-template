@@ -10,7 +10,7 @@ import {
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import Text from 'src/components/Text';
 
-function EditProfileTab() {
+const EditProfileTab = () => {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>

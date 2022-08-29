@@ -16,7 +16,7 @@ const TabsWrapper = styled(Tabs)(
 `
 );
 
-function ManagementUserSettings() {
+const ManagementUserSettings = () => {
   const [currentTab, setCurrentTab] = useState<string>('activity');
 
   const tabs = [

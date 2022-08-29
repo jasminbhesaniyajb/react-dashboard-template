@@ -26,7 +26,7 @@ const CardActionsWrapper = styled(CardActions)(
 `
 );
 
-function ActivityTab() {
+const ActivityTab = () => {
   return (
     <Card>
       <CardHeader

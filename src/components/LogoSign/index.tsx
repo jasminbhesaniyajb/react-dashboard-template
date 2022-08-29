@@ -94,7 +94,7 @@ const TooltipWrapper = styled(({ className, ...props }: TooltipProps) => (
   }
 }));
 
-function Logo() {
+const Logo = () => {
   const theme = useTheme();
 
   return (

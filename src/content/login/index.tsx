@@ -1,7 +1,7 @@
 import { Box, Container, Card, Button, Grid, TextField } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
-function Login() {
+const Login = () => {
   return (
     <Container maxWidth="sm">
       <Box
