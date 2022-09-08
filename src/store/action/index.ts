@@ -1,4 +1,5 @@
-import {ADD_USER} from '../constant'
+import { ADD_USER } from '../constant';
+
 export const addUser = (data): any => {
   console.log('action call', data);
   return {
