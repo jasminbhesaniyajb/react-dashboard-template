@@ -4,6 +4,7 @@ import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { addUser } from '../../../store/action';
 import { useDispatch } from 'react-redux';
 import { User } from 'src/types';
+import { getProducts } from 'src/store/action/productAction';
 
 const PageHeader = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,14 @@ const PageHeader = () => {
           onClick={()=> dispatch(addUser(user))}
         >
           Add user
+        </Button>
+        <Button
+          sx={{ mt: { xs: 2, md: 0 } }}
+          variant="contained"
+          startIcon={<AddTwoToneIcon fontSize="small" />}
+          onClick={()=> dispatch(getProducts())}
+        >
+          Product list
         </Button>
       </Grid>
     </Grid>

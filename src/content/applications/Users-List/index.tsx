@@ -14,10 +14,14 @@ import {
   Button
 } from '@mui/material';
 import RecentOrders from './RecentOrders';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteUser } from '../../../store/action';
 
 const ApplicationsTransactions = () => {
   const users = useSelector((state: any) => state.users);
+  const products = useSelector((state: any) => state.products);
+  const dispatch = useDispatch();
+
   return (
     <>
       <Helmet>
@@ -52,7 +56,7 @@ const ApplicationsTransactions = () => {
                 <TableCell>{item.mobile}</TableCell>
                 <TableCell>
                   <Button variant="contained">Edit</Button>
-                  <Button variant="contained" color="error">
+                  <Button variant="contained" color="error" onClick={()=> dispatch(deleteUser(index))} >
                     Delete
                   </Button>
                 </TableCell>
@@ -62,7 +66,6 @@ const ApplicationsTransactions = () => {
         </Table>
       </TableContainer>
       </Container>
-
       {/* <Container maxWidth="lg">
         <Grid
           container
