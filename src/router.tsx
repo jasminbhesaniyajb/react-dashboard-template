@@ -21,6 +21,9 @@ const Login = Loader(lazy(() => import('src/content/login')));
 const UsersList = Loader(
   lazy(() => import('src/content/applications/Users-List'))
 );
+const ProductsList = Loader(
+  lazy(() => import('src/content/applications/products'))
+);
 const UserProfile = Loader(
   lazy(() => import('src/content/applications/Users/profile'))
 );
@@ -79,6 +82,10 @@ const routes: RouteObject[] = [
       {
         path: 'users-list',
         element: <UsersList />
+      },
+      {
+        path: 'products-list',
+        element: <ProductsList />
       },
       {
         path: 'profile',

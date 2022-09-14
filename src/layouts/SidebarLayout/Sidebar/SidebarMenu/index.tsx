@@ -183,6 +183,17 @@ const SidebarMenu = () => {
                   Users List
                 </Button>
               </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/management/products-list"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  Product List
+                </Button>
+              </ListItem>
             </List>
           </SubMenuWrapper>
         </List>

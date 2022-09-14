@@ -15,32 +15,24 @@ import {
 } from '@mui/material';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { useSelector, useDispatch } from 'react-redux';
-import { addUser, deleteUser } from '../../../store/action';
+import { deleteUser } from '../../../store/action';
 import '../../../styles/style.css';
-import { User } from 'src/types';
+import { getProducts } from 'src/store/action/productAction';
 
-const users = () => {
-  const users = useSelector((state: any) => state.users);
+const products = () => {
+  const products = useSelector((state: any) => state.products);
   const dispatch = useDispatch();
-  const user: User = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg',
-    email: 'john@email.com',
-    mobile: '12939390330',
-    gender: 'male',
-    age: 24
-  };
 
   return (
     <>
       <Helmet>
-        <title>Users - Applications</title>
+        <title>Products - Applications</title>
       </Helmet>
       <PageTitleWrapper>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Typography variant="h3" component="h3" gutterBottom>
-              Users
+              Products
             </Typography>
             <Typography variant="subtitle2">User List</Typography>
           </Grid>
@@ -49,19 +41,10 @@ const users = () => {
               sx={{ mt: { xs: 2, md: 0 } }}
               variant="contained"
               startIcon={<AddTwoToneIcon fontSize="small" />}
-              onClick={() => dispatch(addUser(user))}
-              className="mr-3"
+              onClick={() => dispatch(getProducts())}
             >
-              Add user
+              Product list
             </Button>
-            {/* <Button
-          sx={{ mt: { xs: 2, md: 0 } }}
-          variant="contained"
-          startIcon={<AddTwoToneIcon fontSize="small" />}
-          onClick={()=> dispatch(getProducts())}
-        >
-          Product list
-        </Button> */}
           </Grid>
         </Grid>
       </PageTitleWrapper>
@@ -79,7 +62,7 @@ const users = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {users.map((item, index) => (
+              {products.map((item, index) => (
                 <TableRow
                   key={index}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -111,4 +94,4 @@ const users = () => {
   );
 };
 
-export default users;
+export default products;
