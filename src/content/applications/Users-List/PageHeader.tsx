@@ -31,6 +31,7 @@ const PageHeader = () => {
           variant="contained"
           startIcon={<AddTwoToneIcon fontSize="small" />}
           onClick={()=> dispatch(addUser(user))}
+          className='mr-3'
         >
           Add user
         </Button>

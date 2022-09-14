@@ -11,11 +11,11 @@ import {
   TableCell,
   TableBody,
   Paper,
-  Button
+  Button,
 } from '@mui/material';
-import RecentOrders from './RecentOrders';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteUser } from '../../../store/action';
+import '../../../styles/style.css';
 
 const ApplicationsTransactions = () => {
   const users = useSelector((state: any) => state.users);
@@ -55,7 +55,7 @@ const ApplicationsTransactions = () => {
                 <TableCell>{item.age}</TableCell>
                 <TableCell>{item.mobile}</TableCell>
                 <TableCell>
-                  <Button variant="contained">Edit</Button>
+                  <Button variant="contained" className='mr-3'>Edit</Button>
                   <Button variant="contained" color="error" onClick={()=> dispatch(deleteUser(index))} >
                     Delete
                   </Button>
@@ -66,19 +66,6 @@ const ApplicationsTransactions = () => {
         </Table>
       </TableContainer>
       </Container>
-      {/* <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={3}
-        >
-          <Grid item xs={12}>
-            <RecentOrders />
-          </Grid>
-        </Grid>
-      </Container> */}
     </>
   );
 };
