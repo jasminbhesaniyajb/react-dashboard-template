@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import {
@@ -17,11 +18,22 @@ import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteUser } from '../../../store/action';
 import '../../../styles/style.css';
-import { getProducts } from 'src/store/action/productAction';
+import { addProducts, getProducts } from 'src/store/action/productAction';
 
 const products = () => {
   const products = useSelector((state: any) => state.products);
+  console.log('product', products);
   const dispatch = useDispatch();
+  const product = {
+    name: 'i phone',
+    category: 'mobile',
+    price: 20000,
+    color: 'red'
+  };
+
+  const showProduct = async () => {
+    dispatch(await getProducts())
+  }
 
   return (
     <>
@@ -41,9 +53,18 @@ const products = () => {
               sx={{ mt: { xs: 2, md: 0 } }}
               variant="contained"
               startIcon={<AddTwoToneIcon fontSize="small" />}
-              onClick={() => dispatch(getProducts())}
+              onClick={() => dispatch(addProducts(product))}
             >
               Product list
+            </Button>
+            <Button
+              sx={{ mt: { xs: 2, md: 0 } }}
+              variant="contained"
+              startIcon={<AddTwoToneIcon fontSize="small" />}
+            //   onClick={() => dispatch(getProducts())}
+            onClick={showProduct}
+            >
+              show product list
             </Button>
           </Grid>
         </Grid>
@@ -54,10 +75,9 @@ const products = () => {
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Gender</TableCell>
-                <TableCell>Age</TableCell>
-                <TableCell>Phone</TableCell>
+                <TableCell>category</TableCell>
+                <TableCell>price</TableCell>
+                <TableCell>color</TableCell>
                 <TableCell>Action</TableCell>
               </TableRow>
             </TableHead>
@@ -68,10 +88,9 @@ const products = () => {
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell>{item.name}</TableCell>
-                  <TableCell>{item.email}</TableCell>
-                  <TableCell>{item.gender}</TableCell>
-                  <TableCell>{item.age}</TableCell>
-                  <TableCell>{item.mobile}</TableCell>
+                  <TableCell>{item.category}</TableCell>
+                  <TableCell>{item.price}</TableCell>
+                  <TableCell>{item.color}</TableCell>
                   <TableCell>
                     <Button variant="contained" className="mr-3">
                       Edit
