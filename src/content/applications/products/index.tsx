@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import {
@@ -16,13 +16,12 @@ import {
 } from '@mui/material';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteUser } from '../../../store/action';
 import '../../../styles/style.css';
-import { addProducts, getProducts } from 'src/store/action/productAction';
+import { addProduct, getProducts } from 'src/store/action/productAction';
 
 const products = () => {
-  const products = useSelector((state: any) => state.products);
-  console.log('product', products);
+  const productList = useSelector((state: any) => state.products);
+  console.log('productList', productList);
   const dispatch = useDispatch();
   const product = {
     name: 'i phone',
@@ -30,10 +29,6 @@ const products = () => {
     price: 20000,
     color: 'red'
   };
-
-  const showProduct = async () => {
-    dispatch(await getProducts())
-  }
 
   return (
     <>
@@ -53,7 +48,7 @@ const products = () => {
               sx={{ mt: { xs: 2, md: 0 } }}
               variant="contained"
               startIcon={<AddTwoToneIcon fontSize="small" />}
-              onClick={() => dispatch(addProducts(product))}
+              onClick={() => dispatch(addProduct(product))}
             >
               Product list
             </Button>
@@ -61,8 +56,7 @@ const products = () => {
               sx={{ mt: { xs: 2, md: 0 } }}
               variant="contained"
               startIcon={<AddTwoToneIcon fontSize="small" />}
-            //   onClick={() => dispatch(getProducts())}
-            onClick={showProduct}
+              onClick={() => dispatch(getProducts())}
             >
               show product list
             </Button>
@@ -78,11 +72,12 @@ const products = () => {
                 <TableCell>category</TableCell>
                 <TableCell>price</TableCell>
                 <TableCell>color</TableCell>
+                <TableCell>brand</TableCell>
                 <TableCell>Action</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {products.map((item, index) => (
+              {productList.map((item, index) => (
                 <TableRow
                   key={index}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -91,6 +86,7 @@ const products = () => {
                   <TableCell>{item.category}</TableCell>
                   <TableCell>{item.price}</TableCell>
                   <TableCell>{item.color}</TableCell>
+                  <TableCell>{item.brand}</TableCell>
                   <TableCell>
                     <Button variant="contained" className="mr-3">
                       Edit
@@ -98,7 +94,6 @@ const products = () => {
                     <Button
                       variant="contained"
                       color="error"
-                      onClick={() => dispatch(deleteUser(index))}
                     >
                       Delete
                     </Button>

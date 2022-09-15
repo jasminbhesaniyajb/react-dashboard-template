@@ -1,18 +1,14 @@
-import { ADD_PRODUCT, PRODUCT_LIST } from '../constant';
-import Axios from 'axios';
+import { ADD_PRODUCT, PRODUCT_LIST, SET_PRODUCT_LIST } from '../constant';
 
-export const addProducts = (data): any => {
+export const addProduct = (data): any => {
   return {
     type: ADD_PRODUCT,
     payload: data
   };
 };
 
-export const getProducts = async () => {
-  let data = await Axios.get('https://jsonplaceholder.typicode.com/todos/1');
-  console.log("data", data);  
+export const getProducts = () => {
   return {
     type: PRODUCT_LIST,
-    payload: data
   };
 };

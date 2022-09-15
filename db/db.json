@@ -1,0 +1,40 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "oppo A54",
+      "color": "black",
+      "price": 20000,
+      "category": "mobile",
+      "brand": "oppo",
+      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+    },
+    {
+      "id": 2,
+      "name": "mi",
+      "color": "black",
+      "price": 22000,
+      "category": "mobile",
+      "brand": "mi",
+      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+    },
+    {
+      "id": 3,
+      "name": "i phone",
+      "color": "black",
+      "price": 90000,
+      "category": "mobile",
+      "brand": "apple",
+      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+    },
+    {
+      "id": 4,
+      "name": "realme",
+      "color": "black",
+      "price": 15000,
+      "category": "mobile",
+      "brand": "realme",
+      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+    }
+  ]
+}
