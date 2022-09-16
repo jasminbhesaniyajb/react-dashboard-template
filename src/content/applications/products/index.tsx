@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import {
   Grid,
   Container,
@@ -35,8 +34,8 @@ const products = () => {
       <Helmet>
         <title>Products - Applications</title>
       </Helmet>
-      <PageTitleWrapper>
-        <Grid container justifyContent="space-between" alignItems="center">
+      <Container maxWidth="lg" className="MuiPageTitle-wrapper">
+        <Grid container justifyContent="space-between" py={3} alignItems="center">
           <Grid item>
             <Typography variant="h3" component="h3" gutterBottom>
               Products
@@ -50,7 +49,7 @@ const products = () => {
               startIcon={<AddTwoToneIcon fontSize="small" />}
               onClick={() => dispatch(addProduct(product))}
             >
-              Product list
+              Add Product
             </Button>
             <Button
               sx={{ mt: { xs: 2, md: 0 } }}
@@ -62,13 +61,14 @@ const products = () => {
             </Button>
           </Grid>
         </Grid>
-      </PageTitleWrapper>
+        </Container>
       <Container maxWidth="lg">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
+                <TableCell>Image</TableCell>
                 <TableCell>category</TableCell>
                 <TableCell>price</TableCell>
                 <TableCell>color</TableCell>
@@ -83,6 +83,15 @@ const products = () => {
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell>{item.name}</TableCell>
+                  <TableCell>
+                    <img
+                      src={item.photo}
+                      className="object-fit-contain"
+                      alt="img"
+                      width={100}
+                      height={100}
+                    />
+                  </TableCell>
                   <TableCell>{item.category}</TableCell>
                   <TableCell>{item.price}</TableCell>
                   <TableCell>{item.color}</TableCell>
@@ -91,10 +100,7 @@ const products = () => {
                     <Button variant="contained" className="mr-3">
                       Edit
                     </Button>
-                    <Button
-                      variant="contained"
-                      color="error"
-                    >
+                    <Button variant="contained" color="error">
                       Delete
                     </Button>
                   </TableCell>

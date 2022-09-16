@@ -1,3 +1,6 @@
 .mr-3 {
-    margin-right: 10px;
+  margin-right: 10px;
+}
+.object-fit-contain {
+  object-fit: contain;
 }

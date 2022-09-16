@@ -7,7 +7,7 @@
       "price": 20000,
       "category": "mobile",
       "brand": "oppo",
-      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+      "photo": "https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "price": 22000,
       "category": "mobile",
       "brand": "mi",
-      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+      "photo": "https://m.media-amazon.com/images/I/71SvV17lq-L._SX425_.jpg"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "price": 90000,
       "category": "mobile",
       "brand": "apple",
-      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+      "photo": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW9iaWxlJTIwcGhvbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "price": 15000,
       "category": "mobile",
       "brand": "realme",
-      "photo": "https://www.google.com/search?q=mobile+images&rlz=1C1CHBD_enIN1003IN1003&oq=mobile+images&aqs=chrome..69i57j0i512l9.4036j0j7&sourceid=chrome&ie=UTF-8#imgrc=91XQ-utqhuhLLM"
+      "photo": "https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max"
     }
   ]
 }

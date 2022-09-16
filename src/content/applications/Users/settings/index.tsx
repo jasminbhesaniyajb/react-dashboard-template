@@ -1,7 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageHeader from './PageHeader';
-import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import { Container, Tabs, Tab, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ActivityTab from './ActivityTab';
@@ -34,9 +33,9 @@ const ManagementUserSettings = () => {
       <Helmet>
         <title>User Settings - Applications</title>
       </Helmet>
-      <PageTitleWrapper>
+      <Container maxWidth="lg" className="MuiPageTitle-wrapper">
         <PageHeader />
-      </PageTitleWrapper>
+      </Container>
       <Container maxWidth="lg">
         <Grid
           container
@@ -68,6 +67,6 @@ const ManagementUserSettings = () => {
       </Container>
     </>
   );
-}
+};
 
 export default ManagementUserSettings;

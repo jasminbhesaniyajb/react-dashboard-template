@@ -8,7 +8,6 @@ import {
   Button
 } from '@mui/material';
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-import Text from 'src/components/Text';
 
 const EditProfileTab = () => {
   return (
@@ -43,9 +42,7 @@ const EditProfileTab = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
-                  <Text color="black">
                     <b>Craig Donin</b>
-                  </Text>
                 </Grid>
                 <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                   <Box pr={3} pb={2}>
@@ -53,9 +50,7 @@ const EditProfileTab = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
-                  <Text color="black">
                     <b>15 March 1977</b>
-                  </Text>
                 </Grid>
                 <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                   <Box pr={3} pb={2}>
@@ -64,10 +59,8 @@ const EditProfileTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
                   <Box sx={{ maxWidth: { xs: 'auto', sm: 300 } }}>
-                    <Text color="black">
                       1749 High Meadow Lane, SEQUOIA NATIONAL PARK, California,
                       93262
-                    </Text>
                   </Box>
                 </Grid>
               </Grid>

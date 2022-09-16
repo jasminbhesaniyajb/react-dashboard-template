@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import {
   Grid,
   Container,
@@ -36,8 +35,13 @@ const users = () => {
       <Helmet>
         <title>Users - Applications</title>
       </Helmet>
-      <PageTitleWrapper>
-        <Grid container justifyContent="space-between" alignItems="center">
+      <Container maxWidth="lg" className="MuiPageTitle-wrapper">
+        <Grid
+          container
+          justifyContent="space-between"
+          py={3}
+          alignItems="center"
+        >
           <Grid item>
             <Typography variant="h3" component="h3" gutterBottom>
               Users
@@ -64,7 +68,7 @@ const users = () => {
         </Button> */}
           </Grid>
         </Grid>
-      </PageTitleWrapper>
+      </Container>
       <Container maxWidth="lg">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -13,7 +13,6 @@ import {
   darken
 } from '@mui/material';
 import SidebarMenu from './SidebarMenu';
-import Logo from 'src/components/LogoSign';
 import { Typography } from '@mui/material';
 
 const SidebarWrapper = styled(Box)(
