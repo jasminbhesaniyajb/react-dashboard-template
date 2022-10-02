@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, PRODUCT_LIST, SET_PRODUCT_LIST } from '../constant';
+import { ADD_PRODUCT, PRODUCT_LIST, REMOVE_PRODUCT, SET_PRODUCT_LIST } from '../constant';
 
 export const addProduct = (data): any => {
   return {
@@ -10,5 +10,12 @@ export const addProduct = (data): any => {
 export const getProducts = () => {
   return {
     type: PRODUCT_LIST,
+  };
+};
+
+export const removeProduct = (data): any => {
+  return {
+    type: REMOVE_PRODUCT,
+    payload: data
   };
 };

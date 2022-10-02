@@ -16,11 +16,11 @@ import {
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { useSelector, useDispatch } from 'react-redux';
 import '../../../styles/style.css';
-import { addProduct, getProducts } from 'src/store/action/productAction';
+import { addProduct, getProducts, removeProduct } from 'src/store/action/productAction';
 
 const products = () => {
   const productList = useSelector((state: any) => state.products);
-  console.log('productList', productList);
+  
   const dispatch = useDispatch();
   const product = {
     name: 'i phone',
@@ -28,6 +28,14 @@ const products = () => {
     price: 20000,
     color: 'red'
   };
+
+  const removeItem = (id) => {
+    dispatch(removeProduct(id));    
+  }
+
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [])
 
   return (
     <>
@@ -50,14 +58,6 @@ const products = () => {
               onClick={() => dispatch(addProduct(product))}
             >
               Add Product
-            </Button>
-            <Button
-              sx={{ mt: { xs: 2, md: 0 } }}
-              variant="contained"
-              startIcon={<AddTwoToneIcon fontSize="small" />}
-              onClick={() => dispatch(getProducts())}
-            >
-              show product list
             </Button>
           </Grid>
         </Grid>
@@ -100,7 +100,7 @@ const products = () => {
                     <Button variant="contained" className="mr-3">
                       Edit
                     </Button>
-                    <Button variant="contained" color="error">
+                    <Button variant="contained" color="error" onClick={() => removeItem(item.id)}>
                       Delete
                     </Button>
                   </TableCell>
