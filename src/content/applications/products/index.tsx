@@ -16,11 +16,16 @@ import {
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { useSelector, useDispatch } from 'react-redux';
 import '../../../styles/style.css';
-import { addProduct, getProducts, removeProduct } from 'src/store/action/productAction';
+import {
+  addProduct,
+  getProducts,
+  removeProduct,
+  searchProduct
+} from 'src/store/action/productAction';
 
 const products = () => {
   const productList = useSelector((state: any) => state.products);
-  
+
   const dispatch = useDispatch();
   const product = {
     name: 'i phone',
@@ -30,12 +35,12 @@ const products = () => {
   };
 
   const removeItem = (id) => {
-    dispatch(removeProduct(id));    
-  }
+    dispatch(removeProduct(id));
+  };
 
   useEffect(() => {
-    dispatch(getProducts())
-  }, [])
+    dispatch(getProducts());
+  }, []);
 
   return (
     <>
@@ -43,7 +48,18 @@ const products = () => {
         <title>Products - Applications</title>
       </Helmet>
       <Container maxWidth="lg" className="MuiPageTitle-wrapper">
-        <Grid container justifyContent="space-between" py={3} alignItems="center">
+        <input
+          type="text"
+          onChange={(e) => dispatch(searchProduct(e.target.value))
+          }
+          placeholder="Search"
+        />
+        <Grid
+          container
+          justifyContent="space-between"
+          py={3}
+          alignItems="center"
+        >
           <Grid item>
             <Typography variant="h3" component="h3" gutterBottom>
               Products
@@ -61,7 +77,7 @@ const products = () => {
             </Button>
           </Grid>
         </Grid>
-        </Container>
+      </Container>
       <Container maxWidth="lg">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -100,7 +116,11 @@ const products = () => {
                     <Button variant="contained" className="mr-3">
                       Edit
                     </Button>
-                    <Button variant="contained" color="error" onClick={() => removeItem(item.id)}>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={() => removeItem(item.id)}
+                    >
                       Delete
                     </Button>
                   </TableCell>

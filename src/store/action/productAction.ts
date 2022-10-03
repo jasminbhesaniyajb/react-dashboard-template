@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, PRODUCT_LIST, REMOVE_PRODUCT, SET_PRODUCT_LIST } from '../constant';
+import { ADD_PRODUCT, PRODUCT_LIST, REMOVE_PRODUCT, SET_PRODUCT_LIST, SEARCH_PRODUCT } from '../constant';
 
 export const addProduct = (data): any => {
   return {
@@ -19,3 +19,10 @@ export const removeProduct = (data): any => {
     payload: data
   };
 };
+
+export const searchProduct = (query) => {
+  return {
+    type: SEARCH_PRODUCT,
+    query
+  };
+}
